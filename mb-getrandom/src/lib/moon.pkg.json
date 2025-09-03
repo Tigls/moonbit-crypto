@@ -1,0 +1,21 @@
+{
+  "is_main": false,
+  "targets": {
+    "getrandom_native.mbt": ["native"],
+    "getrandom_js.mbt": ["js"]
+  },
+  "pre-build": [
+    {
+      "input": "c-bind/getrandom.c",
+      "output": "../../target/common/getrandom.o",
+      "command": "mkdir -p $(dirname $output) && cc -c -I $MOON_HOME/include -o $output $input",
+      "backend": "native"
+    }
+  ],
+  "link": {
+    "native": {
+      "cc-link-flags": "../../target/common/getrandom.o"
+    },
+    "js": {}
+  }
+}

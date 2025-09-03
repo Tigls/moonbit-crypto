@@ -1,0 +1,82 @@
+# MoonBit build artifacts
+target/
+.mooncakes/
+.claude/
+CLAUDE.md
+*.wasm
+*.wat
+*.js
+
+# Test coverage
+coverage/
+*.coverage
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Debug files
+*.dSYM/
+*.pdb
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build outputs
+dist/
+build/
+out/
+
+# Package manager locks (uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+
+# Test artifacts
+test-results/
+*.test.js
+
+# Benchmark results
+benchmarks/results/
+
+# Documentation build
+docs/_build/
+docs/.docusaurus/
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.backup
+*.bak

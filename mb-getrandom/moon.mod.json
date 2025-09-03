@@ -1,0 +1,12 @@
+{
+  "name": "moonbitlang/mb-getrandom",
+  "version": "0.1.0",
+  "description": "Secure random number generation for MoonBit (OS entropy; native+WASM)",
+  "repository": "https://github.com/moonbitlang/mb-crypto",
+  "readme": "README.md",
+  "license": "Apache-2.0",
+  "keywords": ["crypto", "random", "entropy", "getrandom", "wasm"],
+  "imports": [],
+  "source": "src",
+  "preferred-target": "native"
+}
