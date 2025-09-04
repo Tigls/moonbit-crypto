@@ -6,6 +6,7 @@ CLAUDE.md
 *.wasm
 *.wat
 *.js
+*.o
 
 # Test coverage
 coverage/
