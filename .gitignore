@@ -44,6 +44,7 @@ yarn-error.log*
 tmp/
 temp/
 *.tmp
+*.py
 
 # Build outputs
 dist/
