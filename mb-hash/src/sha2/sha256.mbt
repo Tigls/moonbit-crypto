@@ -214,3 +214,25 @@ pub fn Sha256::digest(input: Array[UInt]) -> FixedArray[UInt] {
   sha256.update(input);
   return sha256.finalize();
 }
+
+// Additional methods for different input types
+pub fn Sha256::digest_bytes(input: Bytes) -> FixedArray[UInt] {
+  let sha256 = Sha256::new();
+  let arr: Array[UInt] = []
+  for i in 0..<input.length() {
+    arr.push(input[i].to_int().reinterpret_as_uint())
+  }
+  sha256.update(arr);
+  return sha256.finalize();
+}
+
+pub fn Sha256::digest_string(input: String) -> FixedArray[UInt] {
+  let sha256 = Sha256::new();
+  let bytes = input.to_bytes()
+  let arr: Array[UInt] = []
+  for i in 0..<bytes.length() {
+    arr.push(bytes[i].to_int().reinterpret_as_uint())
+  }
+  sha256.update(arr);
+  return sha256.finalize();
+}
