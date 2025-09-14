@@ -6,6 +6,12 @@ pub fn sha256_digest(input: Array[UInt]) -> FixedArray[UInt] {
   sha256.finalize()
 }
 
+pub fn sha512_digest(input: Array[UInt]) -> FixedArray[UInt64] {
+  let sha512 = Sha512::new()
+  sha512.update(input)
+  sha512.finalize()
+}
+
 pub fn sha256_new() -> Sha256 {
   Sha256::new()
 }

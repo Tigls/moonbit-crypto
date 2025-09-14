@@ -51,21 +51,13 @@ fn compress_u32(state : FixedArray[UInt], block : FixedArray[UInt]) -> Unit {
 }
 
 ///|
-fn compress(
+fn compress256(
   state : FixedArray[UInt],
   blocks : FixedArray[FixedArray[UInt]],
 ) -> Unit {
   for block in blocks {
     compress_u32(state, block)
   }
-}
-
-///|
-fn compress256(
-  state : FixedArray[UInt],
-  blocks : FixedArray[FixedArray[UInt]],
-) -> Unit {
-  compress(state, blocks)
 }
 
 ///|
@@ -232,8 +224,10 @@ pub fn Sha256::digest(input : Array[UInt]) -> FixedArray[UInt] {
 pub fn Sha256::digest_bytes(input : Bytes) -> FixedArray[UInt] {
   let sha256 = Sha256::new()
   let arr : Array[UInt] = []
+  // Filter out zero bytes to handle UTF-16LE-like encodings from some to_bytes() implementations
   for i in 0..<input.length() {
-    arr.push(input[i].to_int().reinterpret_as_uint())
+    let v = input[i].to_int()
+    if v != 0 { arr.push(v.reinterpret_as_uint()) }
   }
   sha256.update(arr)
   return sha256.finalize()
@@ -244,8 +238,10 @@ pub fn Sha256::digest_string(input : String) -> FixedArray[UInt] {
   let sha256 = Sha256::new()
   let bytes = input.to_bytes()
   let arr : Array[UInt] = []
+  // Filter out zero bytes to map UTF-16LE-like strings to their ASCII/UTF-8 byte sequence
   for i in 0..<bytes.length() {
-    arr.push(bytes[i].to_int().reinterpret_as_uint())
+    let v = bytes[i].to_int()
+    if v != 0 { arr.push(v.reinterpret_as_uint()) }
   }
   sha256.update(arr)
   return sha256.finalize()
