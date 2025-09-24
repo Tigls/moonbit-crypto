@@ -1,0 +1,12 @@
+{
+  "name": "moon-crypto/mb-mac",
+  "version": "0.1.0",
+  "description": "Message Authentication Codes for MoonBit (HMAC, Poly1305; native+WASM)",
+  "repository": "https://github.com/Tigls/moonbit-crypto",
+  "readme": "README.md",
+  "license": "Apache-2.0",
+  "keywords": ["crypto", "mac", "hmac", "poly1305"],
+  "imports": ["./src/mac/lib.mbt"],
+  "source": "src",
+  "preferred-target": "native"
+}
