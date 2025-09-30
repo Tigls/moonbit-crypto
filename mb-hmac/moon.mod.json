@@ -8,5 +8,10 @@
   "keywords": ["crypto", "mac", "hmac", "poly1305"],
   "imports": ["./src/mac/lib.mbt"],
   "source": "src",
-  "preferred-target": "native"
+  "preferred-target": "native",
+  "deps": {
+   "moon-crypto/mb-hash": {
+      "path": "../mb-hash"
+    }
+  }
 }
