@@ -1,10 +1,15 @@
 fn hex_to_uints(hex: String) -> Array[UInt] {
-  let chars = hex.to_bytes()
+  let raw = hex.to_bytes()
+  let filtered : Array[Int] = []
+  for i in 0..<raw.length() {
+    let v = raw[i].to_int()
+    if v != 0 { filtered.push(v) }
+  }
   let accumulator : Array[UInt] = []
   let mut i = 0
-  while i + 1 < chars.length() {
-    let hi = chars[i].to_int()
-    let lo = chars[i + 1].to_int()
+  while i + 1 < filtered.length() {
+    let hi = filtered[i]
+    let lo = filtered[i + 1]
     let value = (parse_hex_digit(hi) << 4) | parse_hex_digit(lo)
     accumulator.push(value.reinterpret_as_uint())
     i = i + 2
