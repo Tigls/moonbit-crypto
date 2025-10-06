@@ -21,7 +21,8 @@ MoonBit Crypto aims to provide a robust, modular, and easy-to-use cryptographic 
 | Package | Description | Status |
 |---------|-------------|--------|
 | **mb-hash** | Cryptographic hash functions (SHA-256, SHA-512) | ✅ DONE |
-| **mb-mac** | Message Authentication Codes (HMAC, Poly1305) | 🚧 In Development |
+| **mb-hmac** | Message Authentication Codes (HMAC) | ✅ DONE |
+| **mb-poly** | Message Authentication Codes (Poly1305) | 🚧 In Development |
 | **mb-kdf** | Key Derivation Functions (HKDF, PBKDF2, Argon2) | 🚧 In Development |
 
 ### Encryption & Key Exchange
