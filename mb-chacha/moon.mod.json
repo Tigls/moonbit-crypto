@@ -1,0 +1,12 @@
+{
+  "name": "moonbitlang/mb-chacha",
+  "version": "0.1.0",
+  "description": "ChaCha20 stream cipher implementation for MoonBit",
+  "repository": "https://github.com/moonbitlang/mb-crypto",
+  "readme": "README.md",
+  "license": "Apache-2.0",
+  "keywords": ["crypto", "chacha", "chacha20", "stream-cipher"],
+  "imports": [
+    "../mb-getrandom"
+  ]
+}
